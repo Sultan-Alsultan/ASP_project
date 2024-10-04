@@ -1,0 +1,72 @@
+﻿@model ASP_project.Models.Booking
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Room_Id" class="control-label"></label>
+                <select asp-for="Room_Id" class ="form-control" asp-items="ViewBag.Room_Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee_Id" class="control-label"></label>
+                <select asp-for="Employee_Id" class ="form-control" asp-items="ViewBag.Employee_Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee_Id" class="control-label"></label>
+                <select asp-for="Employee_Id" class ="form-control" asp-items="ViewBag.Employee_Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer_Id" class="control-label"></label>
+                <select asp-for="Customer_Id" class ="form-control" asp-items="ViewBag.Customer_Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking_Date" class="control-label"></label>
+                <input asp-for="Booking_Date" class="form-control" />
+                <span asp-validation-for="Booking_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckIn_Date" class="control-label"></label>
+                <input asp-for="CheckIn_Date" class="form-control" />
+                <span asp-validation-for="CheckIn_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckOut_Date" class="control-label"></label>
+                <input asp-for="CheckOut_Date" class="form-control" />
+                <span asp-validation-for="CheckOut_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payment_Id" class="control-label"></label>
+                <select asp-for="Payment_Id" class ="form-control" asp-items="ViewBag.Payment_Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Offer_Id" class="control-label"></label>
+                <select asp-for="Offer_Id" class ="form-control" asp-items="ViewBag.Offer_Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking_Note" class="control-label"></label>
+                <input asp-for="Booking_Note" class="form-control" />
+                <span asp-validation-for="Booking_Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

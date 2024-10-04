@@ -1,0 +1,62 @@
+﻿@model ASP_project.Models.Employee
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Employee_Id" />
+            <div class="form-group">
+                <label asp-for="Employee_Name" class="control-label"></label>
+                <input asp-for="Employee_Name" class="form-control" />
+                <span asp-validation-for="Employee_Name" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Employee_PhoneNumber" class="control-label"></label>
+                <input asp-for="Employee_PhoneNumber" class="form-control" />
+                <span asp-validation-for="Employee_PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee_Email" class="control-label"></label>
+                <input asp-for="Employee_Email" class="form-control" />
+                <span asp-validation-for="Employee_Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee_Password" class="control-label"></label>
+                <input asp-for="Employee_Password" class="form-control" />
+                <span asp-validation-for="Employee_Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee_Role" class="control-label"></label>
+                <input asp-for="Employee_Role" class="form-control" />
+                <span asp-validation-for="Employee_Role" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee_IdCardNumber" class="control-label"></label>
+                <input asp-for="Employee_IdCardNumber" class="form-control" />
+                <span asp-validation-for="Employee_IdCardNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee_Note" class="control-label"></label>
+                <input asp-for="Employee_Note" class="form-control" />
+                <span asp-validation-for="Employee_Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

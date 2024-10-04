@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ASP_project.Models.Offer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Offer_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Offer_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Offer_Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Offer_Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Offer_Note)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Offer_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Offer_Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Offer_Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Offer_Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Offer_Note)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Offer_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Offer_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Offer_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
